@@ -1,0 +1,23 @@
+import React from 'react';
+import cn from 'classnames';
+
+// styles
+import './styles.css';
+
+function Container ({
+    centered = false,
+    children,
+    className = '',
+    fluid = true,
+}) {
+    return (
+        <div className={cn("container", className, {
+            "container--centered": centered,
+            "container--fluid": fluid
+        })}>
+            {children}
+        </div>
+    );
+}
+
+export default Container;
