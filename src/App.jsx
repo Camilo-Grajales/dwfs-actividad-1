@@ -2,7 +2,7 @@
 import React from 'react';
 
 // App
-import './App.css'
+import './App.scss'
 import Header from 'shared/components/Header';
 import Footer from 'shared/components/Footer';
 

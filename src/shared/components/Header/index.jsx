@@ -5,7 +5,7 @@ import React from 'react';
 import Container from 'shared/components/Container';
 
 // styles
-import './styles.css';
+import './styles.scss';
 
 export default function Header() {
     return (

@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 // styles
-import './styles.css';
+import './styles.scss';
 
 function Container ({
     centered = false,

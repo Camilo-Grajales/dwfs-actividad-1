@@ -1,0 +1,20 @@
+@mixin center-content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+@mixin font-montserrat($size, $weight) {
+    font-family: 'montserrat', sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin truncate-text($lines: 3) {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

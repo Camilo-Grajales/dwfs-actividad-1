@@ -1,0 +1,20 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.container {
+    box-sizing: border-box;
+    padding: 0 1rem;
+
+    &--fluid {
+        width: 100%;
+    }
+
+    &--centered {
+        @include center-content;
+        margin: 0 auto;
+    }
+    
+    @include from-desktop{
+        margin: 0 auto;
+        max-width: 1280px;
+    }
+}

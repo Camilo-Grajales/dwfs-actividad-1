@@ -5,14 +5,14 @@ import React from 'react';
 import Container from 'shared/components/Container';
 
 // styles
-import './styles.css';
+import './styles.scss';
 
 export default function Footer() {
     return (
         <footer className='app-footer'>
             <Container>
                 <p className='app-footer__text'>
-                    {`Todos los derechos reservados. © Relatos de Papel. ${new Date().getFullYear()}`}
+                    {`Todos los derechos reservados. \n©Relatos de Papel. ${new Date().getFullYear()}`}
                 </p>
             </Container>
         </footer>
