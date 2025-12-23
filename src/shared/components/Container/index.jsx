@@ -11,10 +11,10 @@ function Container ({
     fluid = true,
 }) {
     return (
-        <div className={cn("container", className, {
+        <div className={cn("container", {
             "container--centered": centered,
             "container--fluid": fluid
-        })}>
+        }, className)}>
             {children}
         </div>
     );

@@ -1,0 +1,11 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.link {
+    color: $color-spectra;
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+        font-weight: 600;
+    }
+}

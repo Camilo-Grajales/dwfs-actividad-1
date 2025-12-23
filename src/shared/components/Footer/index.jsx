@@ -12,7 +12,7 @@ export default function Footer() {
         <footer className='app-footer'>
             <Container>
                 <p className='app-footer__text'>
-                    {`Todos los derechos reservados. \n©Relatos de Papel. ${new Date().getFullYear()}`}
+                    {`Todos los derechos reservados.© \nRelatos de Papel. ${new Date().getFullYear()}`}
                 </p>
             </Container>
         </footer>

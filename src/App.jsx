@@ -2,16 +2,19 @@
 import React from 'react';
 
 // App
-import './App.scss'
 import Header from 'shared/components/Header';
 import Footer from 'shared/components/Footer';
+import AppRouter from 'router';
+
+// Styles
+import './App.scss'
 
 function App() {
   return (
     <>
       <Header />
       <main className='app-main'>
-        <h1>Welcome to Actividad 1!</h1>
+        <AppRouter />
       </main>
       <Footer />
     </>

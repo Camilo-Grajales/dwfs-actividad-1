@@ -1,0 +1,52 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2rem;
+    justify-content: center;
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__title {
+        @include font-montserrat(2rem, 600);
+    }
+
+    &__countdown {
+        @include font-montserrat(1rem, 600);
+    }
+
+    &__image {
+        display: flex;
+        width: 100%;
+    }
+
+    @include from-tablet{
+        flex-direction: row;
+
+        &__text {
+            padding: 0 1rem;
+            justify-content: center;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        &__title {
+            font-size: 3rem;
+        }
+
+        &__countdown {
+            font-size: 1.5rem;
+        }
+
+        &__image {
+            justify-content: center;
+            width: 50%;
+        }
+    }
+}
