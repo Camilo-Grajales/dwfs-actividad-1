@@ -20,7 +20,6 @@ function normalizeGoogleBooksData(item) {
 };
 
 async function fetchGoogleBooksData({ query = '', page = 0, pageSize = 20 }) {
-    console.log('Fetching Google Books data with query:', { query, page, pageSize });
     const params = new URLSearchParams({
         q: query, // Búsqueda por título "intitle:harry"
         startIndex: page,
