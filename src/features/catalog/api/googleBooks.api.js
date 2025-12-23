@@ -1,0 +1,35 @@
+function getRandomPrice (max, min) {
+    return (Math.floor(Math.random() * (max - min + 1)) + min).toFixed(2);
+}
+
+function normalizeGoogleBooksData(item) {
+    const book = item?.volumeInfo ?? {};
+    return {
+        authors: book.authors ?? [],
+        categories: book.categories ?? [],
+        description: book.description ?? '',
+        id: item.id,
+        pageCount: book.pageCount ?? 0,
+        price: item?.saleInfo?.listPrice?.amount ?? getRandomPrice(30, 5),
+        printType: book.printType ?? '',
+        publishedDate: book.publishedDate ?? '',
+        publisher: book.publisher ?? '',
+        thumbnail: book.imageLinks?.thumbnail || '',
+        title: book.title,
+    };
+};
+
+async function fetchGoogleBooksData({ query = '', page = 0, pageSize = 20 }) {
+    console.log('Fetching Google Books data with query:', { query, page, pageSize });
+    const params = new URLSearchParams({
+        q: query, // Búsqueda por título "intitle:harry"
+        startIndex: page,
+        maxResults: pageSize,
+    });
+
+    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?${params.toString()}`);
+    const data = await response.json();
+    return (data.items || []).map(normalizeGoogleBooksData);
+};
+
+export default fetchGoogleBooksData;

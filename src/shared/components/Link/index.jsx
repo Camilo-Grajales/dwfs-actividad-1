@@ -8,7 +8,9 @@ import './styles.scss'
 
 function Link({ className, children, to }) {
     return (
-        <RouterLink to={to} className={cn('link', className)}>{children}</RouterLink>
+        <RouterLink to={to} className={cn('link', className)}>
+            {children}
+        </RouterLink>
     )
 }
 

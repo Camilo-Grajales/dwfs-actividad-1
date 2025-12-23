@@ -1,4 +1,32 @@
+@use 'shared/styles/abstracts.scss' as *;
+
 .catalog {
     display: flex;
     flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        
+        &-item {
+            margin-bottom: 1rem;
+            width: 100%;
+
+            @include from-tablet {
+                margin: 0 0.5rem;
+                width: calc(50% - 1rem);
+            }
+
+            @include from-desktop {
+                width: calc(25% - 1rem);
+            }
+        }
+    }
 }
