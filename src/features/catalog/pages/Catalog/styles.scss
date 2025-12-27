@@ -1,37 +1,69 @@
 @use 'shared/styles/abstracts.scss' as *;
 
 .catalog {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  gap: 2rem;
+
+  &__links {
     display: flex;
     flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 2rem;
+  }
 
-    &__links {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      margin-bottom: 1rem;
+      padding-left: 5px;
+      padding-right: 5px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      @include from-tablet {
+        width: 25%;
+      }
+
+      &__link {
+        text-decoration: none;
+        display: block;
+      }
+
+      &__item-info {
         display: flex;
-        flex-direction: column;
-    }
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
 
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        
-        &-item {
-            margin-bottom: 1rem;
-            width: 100%;
-
-            @include from-tablet {
-                margin: 0 0.5rem;
-                width: calc(50% - 1rem);
-            }
-
-            @include from-desktop {
-                width: calc(25% - 1rem);
-            }
-
-            &-link {
-                text-decoration: none;
-            }
+        &__rating {
+          display: flex;
+          align-items: center;
+          gap: 5px;
         }
-        
+      }
+
+      /* Estilo para la imagen */
+      img {
+        width: 100%;
+        height: 200px; /* Ajusta según lo que necesites */
+        object-fit: cover; /* Mantiene la relación de aspecto de la imagen */
+        border-radius: 8px;
+      }
+
+      /* Estilo para el título del libro */
+      h2 {
+        width: 100%;               /* Asegura que ocupe el 100% del ancho disponible */
+        white-space: nowrap;       /* Evita que el texto se divida en varias líneas */
+        overflow: hidden;          /* Oculta el texto que se desborda */
+        text-overflow: ellipsis;   /* Muestra "..." cuando el texto se corta */
+        font-size: 1.2rem;         /* Ajusta el tamaño de la fuente según lo necesites */
+        margin: 0;                 /* Elimina márgenes innecesarios */
+        line-height: 1.4;          /* Espaciado entre líneas (útil si hay varias líneas) */
+      }
     }
+  }
 }

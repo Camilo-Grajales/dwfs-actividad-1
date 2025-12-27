@@ -20,8 +20,18 @@ function useCatalog(config, swrOptions = {}) {
         }
     );
 
+    const appendInfoToBooks = (books) => {
+        return books.map(book => {
+           return {
+               ...book,
+               isFavorite: false,
+               points: 4.5
+           };
+        });
+    };
+
     return {
-        books: data ?? [],
+        books: data ? appendInfoToBooks(data) : [],
         isLoading,
         error,
     };
