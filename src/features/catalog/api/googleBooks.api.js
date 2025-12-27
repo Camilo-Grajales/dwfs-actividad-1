@@ -1,5 +1,5 @@
 function getRandomPrice (max, min) {
-    return (Math.floor(Math.random() * (max - min + 1)) + min).toFixed(2);
+    return (Math.floor(Math.random() * (max - min + 1)) + min);
 }
 
 function normalizeGoogleBooksData(item) {
@@ -10,7 +10,7 @@ function normalizeGoogleBooksData(item) {
         description: book.description ?? '',
         id: item.id,
         pageCount: book.pageCount ?? 0,
-        price: item?.saleInfo?.listPrice?.amount ?? getRandomPrice(30, 5),
+        price: item?.saleInfo?.listPrice?.amount ?? getRandomPrice(100000, 1000),
         printType: book.printType ?? '',
         publishedDate: book.publishedDate ?? '',
         publisher: book.publisher ?? '',

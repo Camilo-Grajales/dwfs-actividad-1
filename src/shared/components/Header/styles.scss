@@ -8,7 +8,16 @@
     height: 60px;
     @include font-montserrat(2rem, 600);
 
-    &__logo {
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         height: 100%;
+    }
+
+    &__cart {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
     }
 }

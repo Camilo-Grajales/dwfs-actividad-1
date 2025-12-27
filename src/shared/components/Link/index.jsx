@@ -6,9 +6,9 @@ import cn from 'classnames';
 // Styles
 import './styles.scss'
 
-function Link({ className, children, to }) {
+function Link({ className, children, to, ...rest }) {
     return (
-        <RouterLink to={to} className={cn('link', className)}>
+        <RouterLink to={to} className={cn('link', className)} {...rest}>
             {children}
         </RouterLink>
     )
