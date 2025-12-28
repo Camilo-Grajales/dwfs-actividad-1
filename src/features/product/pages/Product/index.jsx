@@ -45,9 +45,9 @@ const handleOnAddItemClick = (e, book) => {
 
   return (
     <Container className="product">
-      <Link to="/catalog">Go Back</Link>
-      <br />
-      <Link to="/thank-you-page">Thank You (quitar de aquí, es solo para probar)</Link>
+      <Link to="/catalog">Go to Catalog</Link>
+      {/* <br />
+      <Link to="/thank-you-page">Thank You (quitar de aquí, es solo para probar)</Link> */}
 
       <div className="product-detail">
         <div className="product-detail__top">
@@ -91,9 +91,9 @@ const handleOnAddItemClick = (e, book) => {
 
               <div className="product-detail__actions">
                 <div className="quantity-selector">
-                  <Button>-</Button>
+                  <button>-</button>
                   <span>2</span>
-                  <Button>+</Button>
+                  <button>+</button>
                 </div>
 
                 {isInCart(book.id) ? (
@@ -106,7 +106,7 @@ const handleOnAddItemClick = (e, book) => {
           </section>
         </div>
 
-        <section className="product-detail__tabs">
+        {/* <section className="product-detail__tabs">
           <div className="tabs-header">
             <button
               className={`tab ${
@@ -139,7 +139,7 @@ const handleOnAddItemClick = (e, book) => {
               </p>
             )}
           </div>
-        </section>
+        </section> */}
       </div>
     </Container>
   );
