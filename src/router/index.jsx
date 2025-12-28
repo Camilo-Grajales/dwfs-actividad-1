@@ -7,6 +7,7 @@ import CheckoutPage from 'features/checkout/pages/Checkout';
 import ProductPage from 'features/product/pages/Product';
 import SearchResultsPage from 'features/catalog/pages/SearchResults';
 import WelcomePage from 'shared/pages/Welcome';
+import ThankYouPage from 'features/thank-you-page';
 
 const AppRouter = () => {
     return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
                 <Route path="/search-results" element={<SearchResultsPage />} />
                 <Route path="/checkout" element={<CheckoutPage />} />
                 <Route path="/product/:productId" element={<ProductPage />} />
+                <Route path="/thank-you-page" element={<ThankYouPage />} />
             </Routes>
         </BrowserRouter>
     )
