@@ -1,21 +1,32 @@
-// Packages
-import React from 'react';
-
-// App
 import Container from 'shared/components/Container';
 import Link from "shared/components/Link";
+import {CheckoutProvider} from "features/checkout/context/CheckoutContext";
 
-// Styles
-import './styles.scss'
+import OrderSummary from "features/checkout/components/OrderSummary";
+import CheckoutLayout  from "features/checkout/components/CheckoutLayout";
 
-function CheckoutPage() {
+
+import "./styles.scss";
+
+
+export default function CheckoutPage() {
+
     return (
-        <Container className='checkout'>
-            <h1>Welcome to Page: Checkout</h1>
-            <Link to="/catalog">Go to Catalog</Link>
-            <Link to="/search-results">Go to Search Results</Link>
-        </Container>
-    )
-}
+        <CheckoutProvider>
+            <Container>
+                <h1>Welcome to Page: Checkout</h1>
+                <Link to="/catalog">Go to Catalog</Link>
+                <Link to="/search-results">Go to Search Results</Link>
+                <div className="checkout">
+                    <div className="checkout__content">
+                        <CheckoutLayout />
+                    </div>
 
-export default CheckoutPage
+                    <aside className="checkout__summary">
+                        <OrderSummary />
+                    </aside>
+                </div>
+            </Container>
+        </CheckoutProvider>
+    );
+}
