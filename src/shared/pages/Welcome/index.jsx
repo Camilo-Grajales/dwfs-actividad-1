@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 // App
 import Container from 'shared/components/Container';
+import Link from 'shared/components/Link';
 
 // Styles
 import './styles.scss'
@@ -29,7 +30,9 @@ function WelcomePage() {
     return (
         <Container className='welcome'>
             <div className='welcome__text'>
-                <h1 className='welcome__title'>Bienvenido a Relatos de Papel.<br /><span>Grupo #25</span></h1>
+                <h1 className='welcome__title'>
+                <Link to="/catalog" className="welcome__link">Bienvenido a Relatos de Papel.</Link><br /><span>Grupo #25</span>
+                </h1>
                 <p className='welcome__countdown'>Redirigiendo en {countdown} segundos...</p>
             </div>
             <div className='welcome__image'>
