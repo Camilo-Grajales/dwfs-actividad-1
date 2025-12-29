@@ -2,13 +2,21 @@ function getRandomPrice (max, min) {
     return (Math.floor(Math.random() * (max - min + 1)) + min);
 }
 
+function findIsbnByType (item, type) {
+    const isbn = item?.industryIdentifiers?.find(industryId => industryId.type  === type);
+    return isbn?.identifier ?? '';
+}
+
 function normalizeGoogleBooksData(item) {
     const book = item?.volumeInfo ?? {};
     return {
         authors: book.authors ?? [],
         categories: book.categories ?? [],
+        currency: item?.saleInfo?.listPrice?.currencyCode,
         description: book.description ?? '',
         id: item.id,
+        isbn10: findIsbnByType(book, 'ISBN_10'),
+        isbn13: findIsbnByType(book, 'ISBN_13'),
         pageCount: book.pageCount ?? 0,
         price: item?.saleInfo?.listPrice?.amount ?? getRandomPrice(100000, 1000),
         printType: book.printType ?? '',

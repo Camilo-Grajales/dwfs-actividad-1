@@ -1,4 +1,23 @@
+@use 'shared/styles/abstracts.scss' as *;
+
 .bag-button {
     background-color: transparent;
     border: none;
+    position: relative;
+
+    &__counter {
+        @include font-montserrat(to-rem(10), 600);
+        align-items: center;
+        background-color: $color-twine;
+        border-radius: 50%;
+        border: 1px solid $color-spectra;
+        color: $color-mineShaft;
+        display: flex;
+        height: to-rem(18);
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: to-rem(18);
+    }
 }

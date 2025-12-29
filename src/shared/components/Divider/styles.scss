@@ -1,0 +1,8 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.divider {
+	background-color: $color-alto;
+	display: block;
+	height: 1px;
+	width: 100%;
+}

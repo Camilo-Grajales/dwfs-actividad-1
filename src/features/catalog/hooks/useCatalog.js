@@ -4,7 +4,7 @@ import useSWR from "swr";
 // App
 import fetchGoogleBooksData from "features/catalog/api/googleBooks.api.js";
 
-function useCatalog(config, swrOptions = {}) {
+export function useCatalog(config, swrOptions = {}) {
     const query = config?.query;
     const page = config?.page ?? 0;
     const pageSize = config?.pageSize;
@@ -26,5 +26,3 @@ function useCatalog(config, swrOptions = {}) {
         error,
     };
 }
-
-export default useCatalog;

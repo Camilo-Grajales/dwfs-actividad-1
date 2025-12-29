@@ -15,38 +15,40 @@
 
     &__title {
         @include font-montserrat(2rem, 600);
+        color: $color-mineShaft;
+        text-align: center;
+        white-space: pre-line;
+
+        & > span {
+            font-size: 1.5rem
+        }
     }
 
     &__countdown {
         @include font-montserrat(1rem, 600);
+        color: $color-bandicoot;
+        text-align: center;
     }
 
     &__image {
         display: flex;
-        width: 100%;
+        width: 70%;
     }
 
     @include from-tablet{
-        flex-direction: row;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 80%;
 
         &__text {
             padding: 0 1rem;
-            justify-content: center;
-            flex-direction: column;
-            width: 50%;
-        }
-
-        &__title {
-            font-size: 3rem;
-        }
-
-        &__countdown {
-            font-size: 1.5rem;
         }
 
         &__image {
             justify-content: center;
-            width: 50%;
+            width: 40%;
         }
     }
 }
