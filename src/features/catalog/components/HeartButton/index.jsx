@@ -18,7 +18,7 @@ const HeartButton = ({isFavorite, toggleFavorite}) => {
             <Icon
                 name={isFavorite ? "heart-full" : "heart"}
                 size={20}
-                color="#2D5A54"
+                color="$color-spectra"
             />
         </Button>
     )

@@ -1,30 +1,32 @@
+@use 'shared/styles/abstracts.scss' as *;
 .quantity-control {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #2D5A54;
+    background-color: $color-spectra;
     font-size: 16px;
-    color: #333;
+    color: $color-springWood;
+    border-radius: 5px;
 
     &__button {
-        background-color: transparent;
-        padding: 8px 12px;
-        cursor: pointer;
-        font-size: 18px;
-        transition: background-color 0.3s;
+      background-color: transparent;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
 
     &:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+      background-color: $color-hover;
     }
 
     &:disabled {
-        cursor: not-allowed;
-        background-color: rgba(255, 255, 255, 0.2);
+      cursor: not-allowed;
+      background-color: $color-disabled;
     }
   }
 
   &__number {
-    color: #fff;
+    color: $color-mineShaft;
     margin: 0 10px;
     font-size: 14px;
     font-weight: bold;
@@ -33,6 +35,6 @@
     text-align: center;
     padding: 5px;
     border: none;
-    background-color: #2D5A54;
+    background-color: $color-springWood;
   }
 }

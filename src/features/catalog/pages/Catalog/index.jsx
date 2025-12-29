@@ -14,10 +14,11 @@ import Icon from "shared/components/Icon/index.jsx";
 
 // Styles
 import './styles.scss'
+import TrashButton from '../../components/TrashButton';
 
 function CatalogPage() {
     const { books, isLoading, error } = useCatalog({ query: 'subject:fiction' });
-    const { addItem, items, updateQuantity, isInCart } = useCart();
+    const { addItem, removeItem, items, updateQuantity, isInCart } = useCart();
 
     const [favorites, setFavorites] = useState(
         books.reduce((acc, book) => {
@@ -37,6 +38,11 @@ function CatalogPage() {
         e.preventDefault();
         addItem({ ...book, quantity: 1 });
         toast.success(`Added "${book.title}" to cart!`);
+    }
+
+    const handleOnDeleteItemClick = (bookId) => {
+        removeItem(bookId);
+        toast.success(`Removed item from cart!`);
     }
 
     const handleQuantityChange = (bookId, newQuantity) => {
@@ -63,7 +69,9 @@ function CatalogPage() {
             <ul className="catalog__list">
                 {books.map((book) => (
                     <li className="catalog__list__item" key={book.id}>
-                        <img src={book.thumbnail} alt={book.title} />
+                        <div className='catalog__list__item-img'>
+                            <img src={book.thumbnail} alt={book.title} />
+                        </div>
                         <Link className="catalog__list__item-link" to={`/product/${book.id}`}>
                             <h2>{book.title}</h2>
                         </Link>
@@ -80,14 +88,17 @@ function CatalogPage() {
                                     size={20}
                                     color="#2D5A54"
                                 />
-                                <span>{book.points}</span>
+                                <span>{book.ratings}</span>
                             </div>
                         </div>
                         {isInCartAndHasQuantity(book.id) ? (
-                            <QuantitySelector
-                                numOrder={items.find(item => item.id === book.id)?.quantity || 1}
-                                onChange={(newQuantity) => handleQuantityChange(book.id, newQuantity)}
-                            />
+                            <div className='catalog__list__item-actions'>
+                                <QuantitySelector
+                                    numOrder={items.find(item => item.id === book.id)?.quantity || 1}
+                                    onChange={(newQuantity) => handleQuantityChange(book.id, newQuantity)}
+                                />
+                                <TrashButton deleteItem={() => handleOnDeleteItemClick(book.id)} />
+                            </div>
                         ) : (
                             <Button onClick={e => handleOnAddItemClick(e, book)}>
                                 Agregar al carrito

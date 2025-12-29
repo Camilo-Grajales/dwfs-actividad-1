@@ -1,6 +1,3 @@
-// Packages
-import React from 'react';
-
 // App
 import Button from 'shared/components/Button';
 
