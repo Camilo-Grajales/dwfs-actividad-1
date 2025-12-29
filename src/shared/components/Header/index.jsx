@@ -2,8 +2,8 @@
 import React from 'react';
 
 // App
+import Cart from 'features/cart/components/Cart';
 import Container from 'shared/components/Container';
-import BagButton from 'features/cart/components/BagButton';
 
 // styles
 import './styles.scss';
@@ -14,7 +14,7 @@ export default function Header() {
             <Container className='app-header__container'>
                 <span className='app-header__logo'>RDP</span>
                 <div className='app-header__cart'>
-                    <BagButton />
+                    <Cart />
                 </div>
             </Container>
         </header>

@@ -1,0 +1,52 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.cart {
+    align-items: center;
+    display: flex;
+
+    &__bag-button {
+        padding: 0;
+    }
+
+    &__items {
+        max-height: 400px;
+        overflow-y: scroll;
+        padding: 0 1rem;
+    }
+
+
+    &__total {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+
+        &-item {
+            @include font-montserrat(to-rem(16), 400);
+            align-items: center;
+            color: $color-bandicoot;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-number {
+            @include font-montserrat(to-rem(18), 600);
+            align-items: center;
+            color: $color-mineShaft;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__cta-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0 1rem;
+
+        & > .button {
+            text-decoration: none;
+            width: 100%;
+        } 
+    }
+}

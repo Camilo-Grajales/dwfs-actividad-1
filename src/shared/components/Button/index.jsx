@@ -13,28 +13,30 @@ const Button = ({
     className = '',
     disabled = false,
     href,
-    onClick,
+    onClick = () => {},
+    variant = 'full',
     ...rest
 }) => {
+
+    const classes = cn(
+        'button',
+        {
+            'button--disabled': disabled,
+            [`button--${variant}`]: variant,
+        },
+        className
+    )
+
     if (href) {
         return (
-            <Link to={href} {...rest} onClick={onClick} className={cn('button', className, { 'button--disabled': disabled })}>
+            <Link to={href} {...rest} onClick={onClick} className={classes}>
                 {children}
             </Link>
         )
     }
 
     return (
-        <button
-            className={cn(
-                'button',
-                {
-                    'button--disabled': disabled
-                },
-                className
-            )}
-            onClick={onClick}
-        >
+        <button className={classes} onClick={onClick}>
             {children}
         </button>
     )

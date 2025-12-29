@@ -1,7 +1,5 @@
 import { useCartContext } from 'features/cart/context/CartProvider';
 
-function useCart() {
+export function useCart() {
     return useCartContext();
 }
-
-export default useCart;
