@@ -1,13 +1,12 @@
 // Packages
-import React from 'react';
 import { toast } from 'sonner';
 
 // App
 import Button from 'shared/components/Button';
 import Container from 'shared/components/Container';
 import Link from "shared/components/Link";
-import useCatalog from 'features/catalog/hooks/useCatalog.js';
-import useCart from 'features/cart/hooks/useCart';
+import { useCatalog } from 'features/catalog/hooks/useCatalog';
+import { useCart } from 'features/cart/hooks/useCart';
 
 // Styles
 import './styles.scss'

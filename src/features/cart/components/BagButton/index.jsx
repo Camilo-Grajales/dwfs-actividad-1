@@ -1,5 +1,5 @@
 // Packages
-import React from 'react';
+import cn from 'classnames';
 
 // App
 import Button from 'shared/components/Button'; 
@@ -8,9 +8,9 @@ import Icon from 'shared/components/Icon';
 // Styles
 import './styles.scss';
 
-const BagButton = () => {
+const BagButton = ({ className = '', onClick }) => {
     return (
-        <Button className="bag-button" aria-label="Cart">
+        <Button className={cn('bag-button', className)} aria-label="Cart" onClick={onClick}>
             <Icon name="bag" size={40} color="#C5A059" />
         </Button>
     );

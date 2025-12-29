@@ -29,11 +29,11 @@ function WelcomePage() {
     return (
         <Container className='welcome'>
             <div className='welcome__text'>
-                <h1 className='welcome__title'>Bienvenido a Relatos de Papel. Grupo #25</h1>
+                <h1 className='welcome__title'>Bienvenido a Relatos de Papel.<br /><span>Grupo #25</span></h1>
                 <p className='welcome__countdown'>Redirigiendo en {countdown} segundos...</p>
             </div>
             <div className='welcome__image'>
-                <img src='./assets/welcoming.svg' alt='A person welcoming' />
+                <img src='./assets/welcome.svg' alt='A person welcoming' />
             </div>
         </Container>
     )
