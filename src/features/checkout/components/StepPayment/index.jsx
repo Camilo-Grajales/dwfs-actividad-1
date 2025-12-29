@@ -1,22 +1,27 @@
+import {useNavigate} from "react-router-dom";
+import {toast} from "sonner";
+import {useForm} from "react-hook-form";
 import Card from "../Card";
 import CardHeader from "../CardHeader";
 import CardBody from "../CardBody";
 import Form from "../Form";
 
-import {useNavigate} from "react-router-dom";
 import {useCheckout} from "features/checkout/context/CheckoutContext";
-import {toast} from "sonner";
-import {useForm} from "react-hook-form";
-import {FEES, PAYMENT_DEFAULT_STATE} from "./constants.js";
+import {useCartContext} from "features/cart/context/CartProvider";
+
+import {FEES, PAYMENT_DEFAULT_STATE} from "./constants";
+
 import "./styles.scss"
 import Button from "../../../../shared/components/Button/index.jsx";
-import {Col, Row} from "../Grid/index.jsx";
+import {Col, Row} from "../Grid/index";
 import FormInput from "../FormInput/index.jsx";
 
 
 const StepPayment = () => {
     const navigate = useNavigate();
     const {step, billing, shipment, goTo, isSubmitting, setIsSubmitting} = useCheckout();
+
+    const {clearCart} = useCartContext();
 
     const isCompleted = (billing.fullName !== "" && shipment.address !== "");
     const isActive = step === "payment";
@@ -33,14 +38,15 @@ const StepPayment = () => {
 
     const onSubmit = async (data) => {
         setIsSubmitting(true);
-
         try {
-            await new Promise(resolve => setTimeout(resolve, 4000));
+            console.log(data, billing, shipment);
+            await new Promise(resolve => setTimeout(resolve, 3000));
             toast.success("Purchase completed successfully");
-            //navigate("/");
+            clearCart();
             setIsSubmitting(false);
+            navigate("/thank-you");
         } catch (error) {
-            toast.error(`Hubo un error al procesar el pago`);
+            toast.error("Hubo un error al procesar el pago");
             setIsSubmitting(false);
         }
     };
@@ -50,6 +56,7 @@ const StepPayment = () => {
             className={[
                 !isActive && "checkout-card--collapsed",
                 isActive && "checkout-card--active",
+                isSubmitting && "checkout-card--disabled",
             ].filter(Boolean).join(" ")}
         >
             <CardHeader title={"Payment"} onClick={() => isCompleted && goTo("payment")}>
@@ -130,17 +137,13 @@ const StepPayment = () => {
                                     type="checkbox"
                                     id="sameAddress"
                                     label={"Use the shipment address as the payment address"}
-                                    register={register("sameAddress", { value: true })}
+                                    register={register("sameAddress", {value: true})}
                                 />
                             </Col>
                         </Row>
-
-
-                        <Button disabled={isSubmitting} onClick={handleSubmit(onSubmit)}>
+                        <Button variant={"inline"} disabled={isSubmitting} onClick={handleSubmit(onSubmit)}>
                             {isSubmitting ? "Processing..." : "Complete purchase"}
                         </Button>
-
-
                     </Form>
                 )}
             </CardBody>

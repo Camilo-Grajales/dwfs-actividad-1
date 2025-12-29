@@ -2,6 +2,7 @@ import Card from "../Card";
 import CardHeader from "../CardHeader";
 import CardBody from "../CardBody";
 import Form from "../Form";
+import {Col, Row} from "../Grid";
 
 import SummaryCard from "../SummaryCard";
 
@@ -13,10 +14,11 @@ import "./styles.scss"
 import Button from "shared/components/Button";
 import FormInput from "../FormInput/index.jsx";
 
+
 const StepShipment = () => {
-    const {step, billing, shipment, setShipment, next, goTo, isSubmitting} = useCheckout();
+    const {step, shipment, setShipment, next, goTo, isSubmitting} = useCheckout();
     const isActive = step === "shipment";
-    const isCompleted = billing.fullName !== "";
+    const isCompleted = shipment.address !== "";
 
     const {
         register,
@@ -37,8 +39,8 @@ const StepShipment = () => {
     return (
         <Card
             className={[
+                !isActive && !isCompleted && "checkout-card--collapsed",
                 isActive && "checkout-card--active",
-                isCompleted && "checkout-card--completed",
             ].filter(Boolean).join(" ")}
         >
             <CardHeader title={"Shipment information"} onClick={() => !isSubmitting && isCompleted && goTo("shipment")}>
@@ -54,7 +56,6 @@ const StepShipment = () => {
                 )}
                 {isActive && (
                     <Form className={"checkout__form"} onSubmit={handleSubmit(onSubmit)}>
-
                         <FormInput
                             type="text"
                             id="department"
@@ -99,8 +100,7 @@ const StepShipment = () => {
                             error={errors.receiver && errors.receiver.message}
                             register={register("receiver", {required: "Please enter a receiver."})}
                         />
-
-                        <Button type onClick={handleSubmit(onSubmit)}>
+                        <Button variant={"inline"} type onClick={handleSubmit(onSubmit)}>
                             {"Go to payment"}
                         </Button>
                     </Form>

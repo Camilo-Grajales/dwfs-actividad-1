@@ -1,12 +1,14 @@
+@use 'shared/styles/abstracts.scss' as *;
+
 .checkout-card {
-  border: 1px solid #ccc;
+  border: 1px solid $color-bandicoot;
   border-radius: 8px;
-  background: #fff;
+  background: $color-white;
   overflow: hidden;
   transition: all 0.3s ease;
 
   &--active {
-    border-color: #222;
+    border-color: $color-black;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   }
 

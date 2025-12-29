@@ -17,6 +17,7 @@ const SummaryCard = ({title, field1, field2, step}) => {
 
                 {step && (
                     <Button className={"summary-card__edit"}
+                            variant={"inline"}
                             disabled={isSubmitting} onClick={() => !isSubmitting && goTo(step)}>
                         <Icon name="edit" size={14} color="#C5A059"/>
                     </Button>

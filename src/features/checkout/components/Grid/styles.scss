@@ -1,13 +1,15 @@
+@use 'shared/styles/abstracts.scss' as *;
+
 .checkout__row {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
+  gap: to-rem(16);
   width: 100%;
 
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: to-rem(16);
   }
 }
 

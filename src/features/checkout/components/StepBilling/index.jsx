@@ -56,7 +56,7 @@ const StepBilling = () => {
                             label={"Document Type"}
                             options={DOCUMENT_TYPES}
                             placeholder={"Please select a document type"}
-                            error={errors.document && errors.document.message}
+                            error={errors.documentType && errors.documentType.message}
                             register={register("documentType", {required: "Please select a document type."})}
                         />
 
@@ -97,7 +97,7 @@ const StepBilling = () => {
                             register={register("phone", {required: "Please enter a phone number."})}
                         />
 
-                        <Button type onClick={handleSubmit(onSubmit)}>
+                        <Button variant={"inline"} onClick={handleSubmit(onSubmit)}>
                             {"Go to shipment"}
                         </Button>
                     </Form>
