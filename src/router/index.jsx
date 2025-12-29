@@ -5,8 +5,8 @@ import CatalogPage from 'features/catalog/pages/Catalog';
 import CheckoutPage from 'features/checkout/pages/Checkout';
 import ProductPage from 'features/product/pages/Product';
 import SearchResultsPage from 'features/catalog/pages/SearchResults';
+import ThankYouPage from 'features/checkout/pages/ThankYouPage';
 import WelcomePage from 'shared/pages/Welcome';
-import ThankYouPage from 'features/thank-you-page';
 
 const AppRouter = () => {
     return (

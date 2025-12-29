@@ -1,0 +1,55 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.thank-you {
+  align-items: center;
+  background-color: $color-springWood;
+  color: $color-mineShaft;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  min-height: 100%;
+  padding: 2rem 1rem;
+  width: 100%;
+
+  &__message {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+
+    & > h1 {
+      @include font-montserrat(2rem, 700);
+      text-align: center
+    }
+
+    & > p {
+      @include font-montserrat(1rem, 400);
+      text-align: center;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__image {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+  }
+
+  @include from-tablet {
+    flex-direction: row;
+
+    &__image {
+      display: flex;
+      width: 60%;
+      justify-content: center;
+    }
+  }
+}

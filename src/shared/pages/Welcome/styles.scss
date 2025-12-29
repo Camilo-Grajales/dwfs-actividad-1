@@ -32,7 +32,7 @@
 
     &__image {
         display: flex;
-        width: 100%;
+        width: 70%;
     }
 
     @include from-tablet{
@@ -48,7 +48,7 @@
 
         &__image {
             justify-content: center;
-            width: 70%;
+            width: 40%;
         }
     }
 }
