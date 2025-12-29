@@ -2,35 +2,34 @@
 
 .quantity-control {
   display: flex;
-  align-items: stretch; // Hace que todos los hijos ocupen el mismo alto
+  align-items: stretch;
   justify-content: center;
-  font-size: 16px;
+  font-size: 1rem;
   color: $color-springWood;
-  border-radius: 5px;
-  overflow: hidden; // Para que los bordes redondeados se apliquen correctamente
+  border-radius: 0.313rem;
+  overflow: hidden;
 
   &__button {
     color: $color-mineShaft;
-    border: 2px solid $color-spectra;
-    background-color: transparent; // Sin fondo
+    border: 0.125rem solid $color-spectra;
+    background-color: transparent;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1.125rem;
     transition: background-color 0.3s;
-    padding: 8px 12px;
+    padding: 0.5rem 0.75rem;
     display: flex;
     align-items: center;
     justify-content: center;
 
     &:hover {
-      background-color: $color-hover; // Opcional, puedes quitarlo si quieres solo borde
+      background-color: $color-hover;
     }
 
     &:disabled {
       cursor: not-allowed;
-      background-color: $color-disabled; // Opcional, si quieres mantener solo borde quita esta línea
+      background-color: $color-disabled;
     }
 
-    // Ajustar bordes para que estén unidos al input
     &:first-child {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
@@ -44,12 +43,12 @@
 
   &__number {
     color: $color-mineShaft;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
-    width: 40px;
+    width: 2.5rem;
     text-align: center;
-    border-top: 2px solid $color-spectra;
-    border-bottom: 2px solid $color-spectra;
+    border-top: 0.125rem solid $color-spectra;
+    border-bottom: 0.125rem solid $color-spectra;
     border-left: none;
     border-right: none;
     border-radius: 0;
