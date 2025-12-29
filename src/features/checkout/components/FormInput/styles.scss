@@ -1,0 +1,50 @@
+.form__control {
+  padding: 0.4rem;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border-color: #222;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+  }
+
+  &:disabled {
+    background-color: #f1f1f1;
+    cursor: not-allowed;
+  }
+
+  &--error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.15);
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+    }
+  }
+}
+
+.form__label {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #333;
+  &--checkbox {
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.form__error {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #dc3545;
+}

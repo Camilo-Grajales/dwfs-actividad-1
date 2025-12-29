@@ -3,7 +3,7 @@ import Link from "shared/components/Link";
 import {CheckoutProvider} from "features/checkout/context/CheckoutContext";
 
 import OrderSummary from "features/checkout/components/OrderSummary";
-import CheckoutLayout  from "features/checkout/components/CheckoutLayout";
+import CheckoutLayout from "features/checkout/components/CheckoutLayout";
 
 
 import "./styles.scss";
@@ -19,11 +19,11 @@ export default function CheckoutPage() {
                 <Link to="/search-results">Go to Search Results</Link>
                 <div className="checkout">
                     <div className="checkout__content">
-                        <CheckoutLayout />
+                        <CheckoutLayout/>
                     </div>
 
                     <aside className="checkout__summary">
-                        <OrderSummary />
+                        <OrderSummary/>
                     </aside>
                 </div>
             </Container>

@@ -1,3 +1,5 @@
+import "./styles.scss";
+
 const CardBody = ({children}) => {
     return (
         <div className="checkout-card__body">

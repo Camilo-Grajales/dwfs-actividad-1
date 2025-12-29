@@ -1,7 +1,7 @@
 import {useCheckout} from "features/checkout/context/CheckoutContext";
 import Icon from 'shared/components/Icon';
 import Button from 'shared/components/Button';
-
+import "./styles.scss";
 
 const SummaryCard = ({title, field1, field2, step}) => {
     const {goTo, isSubmitting} = useCheckout();
@@ -16,9 +16,9 @@ const SummaryCard = ({title, field1, field2, step}) => {
                 </div>
 
                 {step && (
-                    <Button className={!isSubmitting ? "summary-card__edit" : "summary-card__block"}
+                    <Button className={"summary-card__edit"}
                             disabled={isSubmitting} onClick={() => !isSubmitting && goTo(step)}>
-                        <Icon name="trash" size={14} color="#C5A059"/>
+                        <Icon name="edit" size={14} color="#C5A059"/>
                     </Button>
                 )}
             </div>

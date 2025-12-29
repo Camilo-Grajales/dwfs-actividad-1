@@ -1,17 +1,17 @@
 import React from 'react';
-import Card from "./Card";
-import CardHeader from "./CardHeader";
-import CardBody from "./CardBody";
+import Card from "../Card";
+import CardHeader from "../CardHeader";
+import CardBody from "../CardBody";
+import "./styles.scss"
 
 const OrderSummary = () => {
     return (
-        <Card className="checkout-card--active">
-            <CardHeader>
-                <h4>PURCHASE SUMMARY</h4>
+        <Card>
+            <CardHeader title={"PURCHASE SUMMARY"}>
             </CardHeader>
             <CardBody>
                 <div>
-                    <img src="" alt="product"/>
+                    <img src="//" alt="product"/>
                     <div>
                         <p>Lorem ipsum dolor sit amet</p>
                         <strong>$XXX.XXX</strong>
@@ -19,7 +19,7 @@ const OrderSummary = () => {
                 </div>
 
                 <div>
-                    <img src="" alt="product"/>
+                    <img src="//" alt="product"/>
                     <div>
                         <p>Lorem ipsum dolor sit amet</p>
                         <strong>$XXX.XXX</strong>
