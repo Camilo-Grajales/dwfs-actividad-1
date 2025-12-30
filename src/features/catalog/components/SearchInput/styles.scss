@@ -1,9 +1,21 @@
 .search-input {
-    margin-bottom: 1rem;
+    margin-left: 2rem;
+}
 
-    input {
-        width: 100%;
-        padding: 0.5rem;
-        font-size: 1rem;
-    }
+.search-input input {
+    height: 36px;
+    width: 420px;          
+    padding: 0 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+
+    font-size: 14px;       
+    font-weight: 600;      
+    font-family: Arial, sans-serif;
+
+    outline: none;
+}
+
+.search-input input::placeholder {
+    color: #999;
 }

@@ -7,14 +7,10 @@ function SearchInput() {
     const [value, setValue] = useState('');
     const navigate = useNavigate();
 
-    const handleChange = (e) => {
-        setValue(e.target.value);
-    };
-
     const handleKeyDown = (e) => {
         if (e.key === 'Enter' && value.trim() !== '') {
-            navigate(`/search-results?q=${value}`);
-            setValue(''); // 🔹 limpiamos inmediatamente
+            navigate(`/search-results?q=${value.trim()}`);
+            setValue('');
         }
     };
 
@@ -24,7 +20,7 @@ function SearchInput() {
                 type="text"
                 placeholder="Buscar libros por título..."
                 value={value}
-                onChange={handleChange}
+                onChange={(e) => setValue(e.target.value)}
                 onKeyDown={handleKeyDown}
             />
         </div>

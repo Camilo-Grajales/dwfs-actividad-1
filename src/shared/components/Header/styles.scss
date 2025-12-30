@@ -1,18 +1,21 @@
 @use 'shared/styles/abstracts.scss' as *;
 
 .app-header {
-    align-items: center;
     background-color: $color-spectra;
     color: $color-twine;
     display: flex;
     height: 60px;
-    @include font-montserrat(2rem, 600);
 
     &__container {
         display: flex;
         flex-direction: row;
         align-items: center;
         height: 100%;
+        width: 100%;
+    }
+
+    &__logo {
+        @include font-montserrat(2rem, 600);
     }
 
     &__cart {
