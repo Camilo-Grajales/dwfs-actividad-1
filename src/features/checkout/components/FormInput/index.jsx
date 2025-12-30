@@ -1,19 +1,17 @@
 import "./styles.scss";
 
 const FormInput = ({
-                       type = "text",
-                       id,
-                       label,
-                       placeholder,
-                       register,
-                       error,
-                       disabled = false,
-                       options = [],
-                       className = "",
-                       maxLength = 250,
-                   }) => {
-
-
+    type = "text",
+    id,
+    label,
+    placeholder,
+    register,
+    error,
+    disabled = false,
+    options = [],
+    className = "",
+    maxLength = 250,
+}) => {
     const isCheckbox = type === "checkbox";
     const inputClass = isCheckbox ? className :
         `form__control ${error ? "form__control--error" : ""} ${className}`;

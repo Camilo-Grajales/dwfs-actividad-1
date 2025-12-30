@@ -10,22 +10,20 @@ import "./styles.scss";
 export default function CheckoutPage() {
     const {totalItems} = useCartContext();
     return (
-
         <CheckoutProvider>
-            <Container>
-                <h1>Welcome to Page: Checkout</h1>
-                <Link to="/catalog">Go to Catalog</Link>
-                <Link to="/search-results">Go to Search Results</Link>
-                {totalItems > 0 ? (<div className="checkout">
+            <Container className="checkout__container">
+                <h1>Checkout</h1>
+                <Link to="/catalog">Seguir comprando</Link>
+                {totalItems > 0
+                ? (<div className="checkout">
                     <div className="checkout__content">
                         <CheckoutLayout/>
                     </div>
-
                     <aside className="checkout__summary">
                         <OrderSummary/>
                     </aside>
-
-                </div>) : <EmptyCart/>}
+                </div>)
+                : <EmptyCart/>}
 
             </Container>
         </CheckoutProvider>

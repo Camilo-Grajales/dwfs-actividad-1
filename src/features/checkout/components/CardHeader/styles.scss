@@ -2,9 +2,10 @@
 
 .checkout-card {
   &__header {
+    @include font-montserrat(to-rem(18), 600);
     padding: to-rem(16);
     cursor: pointer;
-    background: $color-springWood;
+    background: $color-alto;
     display: flex;
     align-items: center;
     border-bottom: 1px solid $color-alto;

@@ -43,7 +43,7 @@ const StepShipment = () => {
                 isActive && "checkout-card--active",
             ].filter(Boolean).join(" ")}
         >
-            <CardHeader title={"Shipment information"} onClick={() => !isSubmitting && isCompleted && goTo("shipment")}>
+            <CardHeader title="Información de envío" onClick={() => !isSubmitting && isCompleted && goTo("shipment")}>
             </CardHeader>
             <CardBody>
                 {isCompleted && !isActive && (
@@ -100,8 +100,8 @@ const StepShipment = () => {
                             error={errors.receiver && errors.receiver.message}
                             register={register("receiver", {required: "Please enter a receiver."})}
                         />
-                        <Button variant={"inline"} type onClick={handleSubmit(onSubmit)}>
-                            {"Go to payment"}
+                        <Button type onClick={handleSubmit(onSubmit)}>
+                            Ir al pago
                         </Button>
                     </Form>
                 )}

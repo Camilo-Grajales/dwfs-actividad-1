@@ -62,42 +62,44 @@ function CatalogPage() {
             <h1>Destacados</h1>
             <ul className="catalog__list">
                 {books.map((book) => (
-                    <li className="catalog__list__item" key={book.id}>
-                        <div className='catalog__list__item-img'>
+                    <li className="catalog__item" key={book.id}>
+                        <div className='catalog__item-img'>
                             <img src={book.thumbnail} alt={book.title} />
                         </div>
-                        <Link className="catalog__list__item-link" to={`/product/${book.id}`}>
+                        <Link className="catalog__item-link" to={`/product/${book.id}`}>
                             <h2>{book.title}</h2>
                         </Link>
                         <p>{book.authors.join(", ")}</p>
-                        <div className="catalog__list__item-info">
+                        <div className="catalog__item-info">
                             <span>{formatCurrency(book.price)}</span>
                             <HeartButton
                                 isFavorite={favorites[book.id]}
                                 toggleFavorite={() => toggleFavorite(book.id)}
                             />
-                            <div className="catalog__list__item-info__rating">
+                            <div className="catalog__item-info-rating">
+                                <span>{book.ratings}</span>
                                 <Icon
                                     name="star-full"
-                                    size={20}
+                                    size={30}
                                     color="#2D5A54"
                                 />
-                                <span>{book.ratings}</span>
                             </div>
                         </div>
-                        {isInCartAndHasQuantity(book.id) ? (
-                            <div className='catalog__list__item-actions'>
-                                <QuantitySelector
-                                    numOrder={items.find(item => item.id === book.id)?.quantity || 1}
-                                    onChange={(newQuantity) => handleQuantityChange(book.id, newQuantity)}
-                                />
-                                <TrashButton deleteItem={() => handleOnDeleteItemClick(book.id)} />
-                            </div>
-                        ) : (
-                            <Button onClick={e => handleOnAddItemClick(e, book)}>
-                                Agregar al carrito
-                            </Button>
-                        )}
+                        <div className='catalog__item-actions'>
+                            {isInCartAndHasQuantity(book.id) ? (
+                                <>
+                                    <QuantitySelector
+                                        numOrder={items.find(item => item.id === book.id)?.quantity || 1}
+                                        onChange={(newQuantity) => handleQuantityChange(book.id, newQuantity)}
+                                    />
+                                    <TrashButton className='catalog__item-action-delete' deleteItem={() => handleOnDeleteItemClick(book.id)} />
+                                </>
+                            ) : (
+                                <Button className='catalog__item-action-add' onClick={e => handleOnAddItemClick(e, book)}>
+                                    Agregar al carrito
+                                </Button>
+                            )}
+                        </div>
                     </li>
                 ))}
             </ul>

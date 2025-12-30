@@ -13,15 +13,14 @@
   }
 
   &__title {
+    @include font-montserrat(to-rem(14), 700);
     margin: 0 0 to-rem(4) 0;
-    font-size: to-rem(14);
-    font-weight: 700;
-    color: $color-black;
+    color: $color-mineShaft;
   }
 
   &__text {
     margin: 0;
-    font-size: to-rem(13);
+    @include font-montserrat(to-rem(12), 700);
     color: $color-doveGray;
     line-height: 1.4;
     word-break: break-word;

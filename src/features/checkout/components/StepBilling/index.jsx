@@ -35,7 +35,7 @@ const StepBilling = () => {
                 isCompleted && "checkout-card--completed",
             ].filter(Boolean).join(" ")}
         >
-            <CardHeader title={"Billing information"} onClick={() => !isSubmitting && isCompleted && goTo("billing")}>
+            <CardHeader title="Información de facturación" onClick={() => !isSubmitting && isCompleted && goTo("billing")}>
             </CardHeader>
             <CardBody>
                 {isCompleted && !isActive && (
@@ -97,8 +97,8 @@ const StepBilling = () => {
                             register={register("phone", {required: "Please enter a phone number."})}
                         />
 
-                        <Button variant={"inline"} onClick={handleSubmit(onSubmit)}>
-                            {"Go to shipment"}
+                        <Button onClick={handleSubmit(onSubmit)}>
+                            Ir al envío
                         </Button>
                     </Form>
                 )}

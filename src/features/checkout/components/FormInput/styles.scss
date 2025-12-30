@@ -1,8 +1,8 @@
 @use 'shared/styles/abstracts.scss' as *;
 
 .form__control {
+  @include font-montserrat(1rem, 400);
   padding: to-rem(7);
-  font-size: to-rem(15);
   border-radius: to-rem(4);
   border: to-rem(1) solid $color-bandicoot;
   transition: all 0.2s ease;
@@ -25,10 +25,11 @@
 }
 
 .form__label {
-  font-size: to-rem(14);
+  @include font-montserrat(1rem, 600);
   font-weight: bold;
+
   &--checkbox {
-    font-size: to-rem(14);
+    @include font-montserrat(1rem, 600);
     font-weight: bold;
     cursor: pointer;
   }
@@ -40,6 +41,6 @@
 
 .form__error {
   margin-top: to-rem(4);;
-  font-size: to-rem(12);
+  @include font-montserrat(to-rem(12), 400);
   color: $color-thunderbird;
 }

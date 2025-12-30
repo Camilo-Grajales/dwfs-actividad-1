@@ -59,7 +59,7 @@ const StepPayment = () => {
                 isSubmitting && "checkout-card--disabled",
             ].filter(Boolean).join(" ")}
         >
-            <CardHeader title={"Payment"} onClick={() => isCompleted && goTo("payment")}>
+            <CardHeader title="Información de Pago" onClick={() => isCompleted && goTo("payment")}>
             </CardHeader>
             <CardBody>
                 {isActive && (
@@ -141,7 +141,7 @@ const StepPayment = () => {
                                 />
                             </Col>
                         </Row>
-                        <Button variant={"inline"} disabled={isSubmitting} onClick={handleSubmit(onSubmit)}>
+                        <Button disabled={isSubmitting} onClick={handleSubmit(onSubmit)}>
                             {isSubmitting ? "Processing..." : "Complete purchase"}
                         </Button>
                     </Form>
