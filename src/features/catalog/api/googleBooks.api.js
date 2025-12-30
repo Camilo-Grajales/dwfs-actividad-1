@@ -24,6 +24,9 @@ function normalizeGoogleBooksData(item) {
         publisher: book.publisher ?? '',
         thumbnail: book.imageLinks?.thumbnail || '',
         title: book.title,
+        isFavorite: false,
+        ratings: 4.5,
+        order:0
     };
 };
 
