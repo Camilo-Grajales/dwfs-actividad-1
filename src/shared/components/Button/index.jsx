@@ -36,7 +36,7 @@ const Button = ({
     }
 
     return (
-        <button className={classes} onClick={onClick}>
+        <button disabled={disabled} className={classes} onClick={onClick}>
             {children}
         </button>
     )

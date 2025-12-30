@@ -1,0 +1,12 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.checkout-card {
+  &__header {
+    padding: to-rem(16);
+    cursor: pointer;
+    background: $color-springWood;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-alto;
+  }
+}

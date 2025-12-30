@@ -1,0 +1,29 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.checkout-card {
+  border: 1px solid $color-bandicoot;
+  border-radius: 8px;
+  background: $color-white;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &--active {
+    border-color: $color-black;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  &--collapsed {
+    .checkout-card__body {
+      max-height: 0;
+      opacity: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      pointer-events: none;
+    }
+  }
+
+  &--disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
