@@ -1,7 +1,6 @@
 @use 'shared/styles/abstracts.scss' as *;
 
 .trash-button {
-    background-color: transparent;
-    color: $color-spectra;
-    border: none;
+    color: $color-twine;
+    height: to-rem(45);
 }

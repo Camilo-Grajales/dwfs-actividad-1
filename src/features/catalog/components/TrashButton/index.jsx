@@ -15,8 +15,8 @@ const TrashButton = ({ deleteItem }) => {
             <Icon
                 name="trash"
                 size={20}
-                color="$color-spectra"
-            ></Icon>
+                color="$color-twine"
+            />
         </Button>
     );
 }

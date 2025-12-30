@@ -9,8 +9,9 @@ import HeartButton from "features/catalog/components/HeartButton/index.jsx";
 import Icon from "shared/components/Icon/index.jsx";
 import Link from "shared/components/Link";
 import QuantitySelector from "features/catalog/components/QuantitySelector/index.jsx";
-import { useCatalog } from 'features/catalog/hooks/useCatalog';
+import { formatCurrency } from 'shared/utils/formatCurrency';
 import { useCart } from 'features/cart/hooks/useCart';
+import { useCatalog } from 'features/catalog/hooks/useCatalog';
 
 // Styles
 import './styles.scss'
@@ -58,14 +59,7 @@ function CatalogPage() {
 
     return (
         <Container className="catalog">
-            <h1>Welcome to page: Catalog!</h1>
-            <div className="catalog__links">
-                <Link to="/search-results">Go to Search Results</Link>
-                <Link to="/checkout">Go to Checkout</Link>
-                {items.map(item => (
-                    <p key={item.id}>In cart: {item.title} (Quantity: {item.quantity})</p>
-                ))}
-            </div>
+            <h1>Destacados</h1>
             <ul className="catalog__list">
                 {books.map((book) => (
                     <li className="catalog__list__item" key={book.id}>
@@ -75,9 +69,9 @@ function CatalogPage() {
                         <Link className="catalog__list__item-link" to={`/product/${book.id}`}>
                             <h2>{book.title}</h2>
                         </Link>
-                        <p>Authors: {book.authors.join(", ")}</p>
+                        <p>{book.authors.join(", ")}</p>
                         <div className="catalog__list__item-info">
-                            <span>${book.price}</span>
+                            <span>{formatCurrency(book.price)}</span>
                             <HeartButton
                                 isFavorite={favorites[book.id]}
                                 toggleFavorite={() => toggleFavorite(book.id)}

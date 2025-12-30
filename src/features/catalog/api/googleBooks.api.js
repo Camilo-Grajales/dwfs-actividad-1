@@ -1,4 +1,4 @@
-function getRandomPrice (max, min) {
+function getRandomNumber (max, min) {
     return (Math.floor(Math.random() * (max - min + 1)) + min);
 }
 
@@ -18,14 +18,14 @@ function normalizeGoogleBooksData(item) {
         isbn10: findIsbnByType(book, 'ISBN_10'),
         isbn13: findIsbnByType(book, 'ISBN_13'),
         pageCount: book.pageCount ?? 0,
-        price: item?.saleInfo?.listPrice?.amount ?? getRandomPrice(100000, 1000),
+        price: item?.saleInfo?.listPrice?.amount ?? getRandomNumber(100000, 1000),
         printType: book.printType ?? '',
         publishedDate: book.publishedDate ?? '',
         publisher: book.publisher ?? '',
         thumbnail: book.imageLinks?.thumbnail || '',
         title: book.title,
-        isFavorite: false,
-        ratings: 4.5,
+        isFavorite: Boolean(getRandomNumber(1, 0)),
+        ratings: getRandomNumber(5, 0),
         order:0
     };
 };
