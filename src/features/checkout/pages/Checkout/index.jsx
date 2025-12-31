@@ -1,21 +1,31 @@
-// Packages
-import React from 'react';
-
-// App
 import Container from 'shared/components/Container';
 import Link from "shared/components/Link";
+import {CheckoutProvider} from "features/checkout/context/CheckoutContext";
+import OrderSummary from "features/checkout/components/OrderSummary";
+import CheckoutLayout from "features/checkout/components/CheckoutLayout";
+import {useCartContext} from "features/cart/context/CartProvider";
+import EmptyCart from "features/checkout/components/EmptyCart/index.jsx";
+import "./styles.scss";
 
-// Styles
-import './styles.scss'
-
-function CheckoutPage() {
+export default function CheckoutPage() {
+    const {totalItems} = useCartContext();
     return (
-        <Container className='checkout'>
-            <h1>Welcome to Page: Checkout</h1>
-            <Link to="/catalog">Go to Catalog</Link>
-            <Link to="/search-results">Go to Search Results</Link>
-        </Container>
-    )
-}
+        <CheckoutProvider>
+            <Container className="checkout__container">
+                <h1>Checkout</h1>
+                <Link to="/catalog">Seguir comprando</Link>
+                {totalItems > 0
+                ? (<div className="checkout">
+                    <div className="checkout__content">
+                        <CheckoutLayout/>
+                    </div>
+                    <aside className="checkout__summary">
+                        <OrderSummary/>
+                    </aside>
+                </div>)
+                : <EmptyCart/>}
 
-export default CheckoutPage
+            </Container>
+        </CheckoutProvider>
+    );
+}

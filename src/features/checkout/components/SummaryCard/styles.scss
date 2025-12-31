@@ -1,0 +1,36 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.summary-card {
+  &__info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    @include font-montserrat(to-rem(14), 700);
+    margin: 0 0 to-rem(4) 0;
+    color: $color-mineShaft;
+  }
+
+  &__text {
+    margin: 0;
+    @include font-montserrat(to-rem(12), 700);
+    color: $color-doveGray;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+
+  &__edit {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+}

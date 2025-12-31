@@ -1,4 +1,36 @@
 .checkout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 3rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  align-items: start;
+
+  &__container {
+    padding: 2rem 0;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  &__content {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__summary {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+
+    @media (max-width: 1024px) {
+      position: static;
+      order: 2;
+    }
+  }
 }

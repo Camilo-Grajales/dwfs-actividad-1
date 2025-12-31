@@ -1,0 +1,78 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.quantity-control {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  font-size: 1rem;
+  color: $color-springWood;
+  border-radius: 0.313rem;
+  overflow: hidden;
+
+  &__button {
+    color: $color-mineShaft;
+    border: 1px solid $color-spectra;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.125rem;
+    transition: background-color 0.3s;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: rgba($color-white, 0.1);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: rgba($color-white, 0.2);
+    }
+
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &__number {
+    color: $color-mineShaft;
+    font-size: 0.875rem;
+    font-weight: bold;
+    width: 2.5rem;
+    text-align: center;
+    border-top: 1px solid $color-spectra;
+    border-bottom: 1px solid $color-spectra;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    background-color: $color-springWood;
+    flex-grow: 0;
+    height: auto;
+    margin: 0;
+
+    /* Quitar flechas en Chrome, Safari, Edge */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Mantener borde fijo al hover y disabled */
+    &:hover,
+    &:disabled {
+      border-color: $color-spectra;
+      background-color: $color-springWood;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+}

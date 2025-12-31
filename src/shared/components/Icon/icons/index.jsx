@@ -9,6 +9,7 @@ import StarIcon from "./star.svg?react";
 import StarFullIcon from "./star-full.svg?react";
 import TagIcon from "./tag.svg?react";
 import TrashIcon from "./trash.svg?react";
+import EditIcon from "./edit.svg?react";
 
 const Icons = {
     bag: props => <BagIcon {...props} />,
@@ -22,6 +23,7 @@ const Icons = {
     'star-full': props => <StarFullIcon {...props} />,
     tag: props => <TagIcon {...props} />,
     trash: props => <TrashIcon {...props} />,
+    edit: props => <EditIcon {...props} />,
 };
 
 export default Icons;

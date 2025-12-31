@@ -1,0 +1,46 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.form__control {
+  @include font-montserrat(1rem, 400);
+  padding: to-rem(7);
+  border-radius: to-rem(4);
+  border: to-rem(1) solid $color-bandicoot;
+  transition: all 0.2s ease;
+  width: 100%;
+  outline: none;
+
+
+  &:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: $color-twine;
+  }
+
+  &--error {
+    border-color: $color-thunderbird;
+  }
+}
+
+.form__label {
+  @include font-montserrat(1rem, 600);
+  font-weight: bold;
+
+  &--checkbox {
+    @include font-montserrat(1rem, 600);
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__error {
+  margin-top: to-rem(4);;
+  @include font-montserrat(to-rem(12), 400);
+  color: $color-thunderbird;
+}
