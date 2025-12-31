@@ -30,3 +30,34 @@
     font-size: 1.6rem;
     opacity: 0.8;
 }
+
+.search-results__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.search-results__item {
+    display: flex;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+}
+
+.search-results__image {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.search-results__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.search-results__price {
+    font-weight: bold;
+}

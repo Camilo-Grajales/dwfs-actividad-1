@@ -1,11 +1,11 @@
 // Packages
-import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 // App
 import Container from 'shared/components/Container';
 import Link from 'shared/components/Link';
 import { useCatalog } from 'features/catalog/hooks/useCatalog';
+import BookCard from 'features/catalog/components/BookCard';
 
 // Styles
 import './styles.scss';
@@ -41,17 +41,15 @@ function SearchResultsPage() {
                     />
                     <div className="search-results__empty-text">
                         <h2>No hemos encontrado el libro solicitado</h2>
-                        <p>Intenta con otro título o revisa si lo escribiste correctamente.</p>
+                        <p>
+                            Intenta con otro título o revisa si lo escribiste correctamente.
+                        </p>
                     </div>
                 </div>
             ) : (
-                <ul>
+                <ul className="catalog__list">
                     {filteredBooks.map(book => (
-                        <li key={book.id}>
-                            <h2>{book.title}</h2>
-                            <p>{book.authors.join(', ')}</p>
-                            <p>${book.price}</p>
-                        </li>
+                        <BookCard key={book.id} book={book} />
                     ))}
                 </ul>
             )}

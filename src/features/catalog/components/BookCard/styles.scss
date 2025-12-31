@@ -1,0 +1,50 @@
+@use 'shared/styles/abstracts.scss' as *;
+
+.catalog__item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.catalog__item-img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    img {
+        max-width: 150px;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.catalog__item-link {
+    text-decoration: none;
+    color: inherit;
+
+    h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.catalog__item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.catalog__item-info-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.catalog__item-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
